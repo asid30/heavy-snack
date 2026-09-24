@@ -25,6 +25,7 @@
       }
       html {
         scroll-behavior: smooth;
+        scroll-padding-top: 100px;
       }
       body {
         margin: 0;
@@ -57,6 +58,10 @@
         margin: auto;
       }
       .top {
+        position: sticky;
+        top: 0;
+        z-index: 10;
+        background: var(--bg);
         height: 84px;
         display: flex;
         align-items: center;
@@ -224,10 +229,20 @@
         color: var(--muted);
         font-size: 0.9rem;
       }
+      .credit {
+        margin: 0;
+        padding-bottom: 24px;
+        color: var(--muted);
+        font-size: 0.85rem;
+        text-align: center;
+      }
       .footer a {
         color: var(--text);
       }
       @media (max-width: 720px) {
+        html {
+          scroll-padding-top: 88px;
+        }
         .wrap {
           width: min(100% - 36px, 1120px);
         }
@@ -295,8 +310,19 @@
         height: auto;
         aspect-ratio: 16/9;
         object-fit: cover;
-        border: 1px solid var(--line);
         image-rendering: auto;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          #000 65%,
+          rgba(0, 0, 0, 0.85) 78%,
+          transparent 100%
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          #000 65%,
+          rgba(0, 0, 0, 0.85) 78%,
+          transparent 100%
+        );
       }
       .hero-copy {
         display: grid;
@@ -397,6 +423,10 @@
         <span>© <span id="year">2026</span> Heavy Snack</span
         ><a href="#awal">Kembali ke atas ↑</a>
       </footer>
+      <p class="credit">
+        Dikembangkan oleh Asid30<br />
+        Solo developer, Lampung, Indonesia 🇮🇩
+      </p>
     </div>
     <script src="js/projects.js" defer></script>
     <script src="js/project-cards.js" defer></script>
