@@ -162,7 +162,8 @@
         pointer-events: none;
         background:
           linear-gradient(rgba(16, 16, 23, 0.55), rgba(16, 16, 23, 0.55)),
-          url("aset/webp/heavy-snack-banner-2.webp") center / cover no-repeat;
+          url("aset/webp/heavy-snack-banner-2.webp?v=fcf7596c") center / cover
+            no-repeat;
         -webkit-mask-image: linear-gradient(
           to bottom,
           transparent,
@@ -178,22 +179,74 @@
           transparent
         );
       }
+      .profile-frame {
+        --pixel-outline: polygon(
+          12px 0, calc(100% - 12px) 0,
+          calc(100% - 12px) 6px, calc(100% - 6px) 6px,
+          calc(100% - 6px) 12px, 100% 12px,
+          100% calc(100% - 12px), calc(100% - 6px) calc(100% - 12px),
+          calc(100% - 6px) calc(100% - 6px), calc(100% - 12px) calc(100% - 6px),
+          calc(100% - 12px) 100%, 12px 100%,
+          12px calc(100% - 6px), 6px calc(100% - 6px),
+          6px calc(100% - 12px), 0 calc(100% - 12px),
+          0 12px, 6px 12px, 6px 6px, 12px 6px
+        );
+        width: 156px;
+        padding: 6px;
+        margin: 0 auto 24px;
+        background: var(--accent);
+        clip-path: var(--pixel-outline);
+      }
       .profile-photo {
         display: block;
         width: 144px;
         height: 144px;
-        margin: 0 auto 24px;
-        border-radius: 50%;
-        border: 2px solid var(--line);
+        clip-path: var(--pixel-outline);
         object-fit: cover;
       }
+      .profile-dialog {
+        position: relative;
+        max-width: 540px;
+        margin: 28px auto 0;
+        padding: 24px 20px 20px;
+        background: rgba(16, 16, 23, 0.94);
+        border: 2px solid var(--text);
+        box-shadow:
+          0 0 0 4px var(--bg),
+          0 0 0 6px var(--line),
+          8px 8px 0 4px rgba(0, 0, 0, 0.35);
+        text-align: left;
+      }
+      .profile-name {
+        position: absolute;
+        top: -15px;
+        left: 16px;
+        padding: 2px 10px;
+        background: var(--bg);
+        border: 2px solid var(--accent);
+        color: var(--accent);
+        font:
+          700 0.85rem/1.5 "Courier New",
+          Courier,
+          monospace;
+        letter-spacing: 0.08em;
+      }
       .profile p {
-        max-width: 520px;
+        max-width: 720px;
         margin: 0 auto;
         color: var(--text);
-        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
-        font-size: clamp(1rem, 2vw, 1.2rem);
-        line-height: 1.75;
+        font-family: "Courier New", Courier, monospace;
+        font-weight: 700;
+        text-shadow:
+          2px 2px 0 var(--bg),
+          -1px -1px 0 var(--bg);
+        font-size: clamp(0.9rem, 1.6vw, 1rem);
+        letter-spacing: 0.025em;
+        line-height: 1.6;
+      }
+      .profile p + p {
+        margin-top: 8px;
+        color: var(--accent);
       }
       .section-heading {
         display: flex;
@@ -459,16 +512,21 @@
           </div>
         </section>
         <section class="profile" aria-label="Profil Asid">
-          <img
+          <div class="profile-frame">
+            <img
             class="profile-photo"
             src="aset/webp/asid30-profile-picture.webp"
             width="144"
             height="144"
             alt="Foto profil Asid"
             loading="lazy"
-          />
-          <p>Aku Asid, solo developer asal Lampung, Indonesia,</p>
-          <p>Suka makan dan tidur</p>
+            />
+          </div>
+          <div class="profile-dialog">
+            <span class="profile-name">About me</span>
+            <p>Aku Asid, solo developer asal Lampung, Indonesia,</p>
+            <p>Suka makan dan tidur</p>
+          </div>
         </section>
         <section class="section" id="proyek" aria-labelledby="proyek-title">
           <div class="section-heading">
