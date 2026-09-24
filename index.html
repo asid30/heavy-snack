@@ -6,10 +6,10 @@
     <meta name="theme-color" content="#101018" />
     <meta
       name="description"
-      content="Heavy Snack — ruang kecil untuk proyek dan eksperimen digital Asid."
+      content="Heavy Snack — Ruang kreatif untuk berbagai proyek dan eksperimen digital by Asid30."
     />
     <title>Heavy Snack</title>
-    <link rel="icon" type="image/png" href="aset/heavy-snack-logo.png" />
+    <link rel="icon" type="image/webp" href="aset/webp/heavy-snack-logo.webp" />
     <style>
       :root {
         color-scheme: dark;
@@ -147,6 +147,53 @@
       .section {
         border-top: 1px solid var(--line);
         padding: 34px 0 110px;
+      }
+      .profile {
+        position: relative;
+        isolation: isolate;
+        padding: clamp(72px, 10vw, 120px) 24px;
+        text-align: center;
+      }
+      .profile::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+        background:
+          linear-gradient(rgba(16, 16, 23, 0.55), rgba(16, 16, 23, 0.55)),
+          url("aset/webp/heavy-snack-banner-2.webp") center / cover no-repeat;
+        -webkit-mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          #000 25%,
+          #000 75%,
+          transparent
+        );
+        mask-image: linear-gradient(
+          to bottom,
+          transparent,
+          #000 25%,
+          #000 75%,
+          transparent
+        );
+      }
+      .profile-photo {
+        display: block;
+        width: 144px;
+        height: 144px;
+        margin: 0 auto 24px;
+        border-radius: 50%;
+        border: 2px solid var(--line);
+        object-fit: cover;
+      }
+      .profile p {
+        max-width: 520px;
+        margin: 0 auto;
+        color: var(--text);
+        text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.75;
       }
       .section-heading {
         display: flex;
@@ -308,8 +355,9 @@
         display: block;
         width: 100%;
         height: auto;
-        aspect-ratio: 16/9;
+        aspect-ratio: 16/7;
         object-fit: cover;
+        object-position: center;
         image-rendering: auto;
         -webkit-mask-image: linear-gradient(
           to bottom,
@@ -356,7 +404,7 @@
           font-size: clamp(2.7rem, 10vw, 4.4rem);
         }
         .banner {
-          aspect-ratio: 16/10;
+          aspect-ratio: 16/8;
           object-position: center;
         }
         .hero-side {
@@ -376,7 +424,7 @@
         <a class="brand" href="#awal" aria-label="Heavy Snack, kembali ke awal"
           ><img
             class="mark"
-            src="aset/heavy-snack-logo.png"
+            src="aset/webp/heavy-snack-logo.webp"
             width="44"
             height="44"
             alt=""
@@ -391,7 +439,7 @@
         <section class="hero" aria-labelledby="judul">
           <img
             class="banner"
-            src="aset/heavy-snack-banner.jpg"
+            src="aset/webp/heavy-snack-banner.webp"
             width="2048"
             height="1152"
             alt="Ilustrasi pixel art Heavy Snack: ruang kerja kreatif dengan komputer, camilan, buku, dan maskot."
@@ -409,6 +457,18 @@
               penasaran dan semangat untuk belajar.
             </p>
           </div>
+        </section>
+        <section class="profile" aria-label="Profil Asid">
+          <img
+            class="profile-photo"
+            src="aset/webp/asid30-profile-picture.webp"
+            width="144"
+            height="144"
+            alt="Foto profil Asid"
+            loading="lazy"
+          />
+          <p>Aku Asid, solo developer asal Lampung, Indonesia,</p>
+          <p>Suka makan dan tidur</p>
         </section>
         <section class="section" id="proyek" aria-labelledby="proyek-title">
           <div class="section-heading">

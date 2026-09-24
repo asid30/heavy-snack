@@ -11,20 +11,20 @@ Landing page statis siap dipasang di GitHub Pages. Layout ada di `index.html`, d
 
 Konten dan warna dapat diubah langsung di `index.html`.
 
-Semua gambar disimpan di folder `aset/`: `heavy-snack-logo.png`, `heavy-snack-banner.jpg`, `azimutree-banner.png`, dan `azimutree-icon.png`. Path gambar menggunakan path relatif agar tetap bekerja saat situs dipasang pada subfolder repository GitHub Pages.
+Gambar yang dipakai halaman disimpan di folder `aset/webp/`: `heavy-snack-logo.webp`, `heavy-snack-banner.webp`, `azimutree-banner.webp`, dan `azimutree-icon.webp`. Path gambar menggunakan path relatif agar tetap bekerja saat situs dipasang pada subfolder repository GitHub Pages.
 
 ## Menambah proyek
 
-1. Simpan banner dan ikon proyek di folder `aset/` dengan nama seperti `nama-proyek-banner.png` dan `nama-proyek-icon.png`.
+1. Simpan gambar asli di `aset/original/` dan versi WebP terkompresi di `aset/webp/`, dengan nama seperti `nama-proyek-banner.webp` dan `nama-proyek-icon.webp`.
 2. Buka `js/projects.js`, lalu tambahkan objek berikut di dalam array `projects`, setelah objek proyek sebelumnya:
 
 ```js
 {
   name: "Nama Proyek",
   url: "https://contoh.com/",
-  banner: "aset/nama-proyek-banner.png",
+  banner: "aset/webp/nama-proyek-banner.webp",
   bannerAlt: "Banner Nama Proyek",
-  icon: "aset/nama-proyek-icon.png",
+  icon: "aset/webp/nama-proyek-icon.webp",
   category: "Web · Produktivitas",
   description: "Deskripsi singkat proyekmu.",
 },
@@ -33,3 +33,5 @@ Semua gambar disimpan di folder `aset/`: `heavy-snack-logo.png`, `heavy-snack-ba
 Kartu tampil sesuai urutan data dan membuka tautan di tab baru. `icon` boleh dihilangkan jika belum tersedia. Path gambar dihitung dari `index.html`. Tidak perlu mengubah HTML untuk menambah kartu.
 
 Ubah struktur kartu di `js/project-cards.js` dan tampilannya melalui CSS `.project` di `index.html`. JavaScript diperlukan untuk menampilkan kartu; file HTML tetap bisa dibuka langsung di browser tanpa server lokal.
+
+Gambar yang ditampilkan menggunakan WebP terkompresi. File PNG/JPG asli tetap disimpan di `aset/original/` sebagai sumber untuk penyuntingan; halaman hanya memuat versi WebP. Untuk proyek baru, gunakan WebP bila memungkinkan.
